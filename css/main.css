@@ -1,0 +1,55 @@
+.form{
+}
+.form_body{
+	overflow-x: auto;
+}
+.input_hidden{
+	display: none;
+}
+.input_shown{
+	display: inline;
+}
+.row_shown{
+	display: inline;
+}
+.row_hidden{
+	display: none;
+}
+#update_btns a{
+	display: inline;
+}
+.btn_hidden{
+	display: none !important;
+}
+.btn_shown{
+	display: inline !important;
+}
+.container-fluid {
+	padding: 5px;
+}
+.campo_obrigatorio_warn{
+	color: red;
+	font-size: .8em;
+	white-space: nowrap;
+	font-weight: bolder;
+	display: none;
+
+}
+.table{
+	margin-bottom: 0px !important;
+}
+th{
+	white-space: nowrap;
+	padding: 15px 10px !important;
+	color: lightslategray;
+}
+td{
+	font-size: .9em;
+}
+input[type~="file"]{
+	border: 0px;
+	border-radius: 0px;
+	padding: 0px;
+	background-color: "";
+
+}
