@@ -22,3 +22,7 @@ function load_menu(key, table){
 		}
 	}
 }
+
+function menu_toggle(obj){
+	console.log(obj);
+}

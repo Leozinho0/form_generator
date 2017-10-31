@@ -16,25 +16,36 @@ $result = $conn->query_select("SELECT name FROM sqlite_master WHERE type = 'tabl
     <meta charset="UTF-8">
     <title>Generator</title>
     <style>
+        div{
+            box-sizing: border-box;
+        }
         body, html{
             height: 100%;
         }
         .default_container{
             margin: 0 auto;
-            background-color: lightgray;
             width: 500px;
             margin-top: 200px;
-            padding: 15px;
+            padding: 5px;
             border-radius: 5px;
             margin-top: 15px;
+            border: 1px solid black;
         }
         .table_container{
             height: 60px;
             overflow: auto;
         }
         .field_container{
-            height: 100px;
+            height: 150px;
             overflow: auto;
+        }
+        .div_menu_tabs{
+            background-color: lightgrey;
+            padding: 5px;
+            font-weight: bolder;
+        }
+        .fconfig_tree{
+            background-color: white;
         }
         .div_tabela{
             float: left;
@@ -50,11 +61,12 @@ $result = $conn->query_select("SELECT name FROM sqlite_master WHERE type = 'tabl
             width: 50%;
             height: 100%;
             overflow: auto;
+            border: 1px solid black;
         }
         .fconfig_right_container{
-            padding: 10px;
-            border: 1px solid white;
-            border-radius: 5px;
+            border: 1px solid black;
+            float: left;
+            width: 50%;
         }
         .clearboth{
             clear: both;
@@ -84,12 +96,19 @@ $result = $conn->query_select("SELECT name FROM sqlite_master WHERE type = 'tabl
         </div>
         </div>
         <div id="div_fields_config" class="default_container field_container">
+            
             <div id="fconfig_left_container" class="fconfig_left_container">
-                <div id="fconfig_tree">
+                <div id="div_menu_fields" class="div_menu_tabs" onclick="menu_toggle(this);">
+                    <span>Campos</span>
+                    <div id="fconfig_tree" class="fconfig_tree">
+                    </div>
+                </div>
+                <div id="div_menu_config" class="div_menu_tabs" onclick="menu_toggle(this);">
+                    <span>Configurações</span>
                 </div>
             </div>
             <div id="fconfig_right_container" class="fconfig_right_container">
-                lala
+                b
             </div>
         </div>
 
