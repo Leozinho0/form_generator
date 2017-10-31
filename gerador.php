@@ -16,6 +16,9 @@ $result = $conn->query_select("SELECT name FROM sqlite_master WHERE type = 'tabl
     <meta charset="UTF-8">
     <title>Generator</title>
     <style>
+        body, html{
+            height: 100%;
+        }
         .default_container{
             margin: 0 auto;
             background-color: lightgray;
@@ -25,14 +28,36 @@ $result = $conn->query_select("SELECT name FROM sqlite_master WHERE type = 'tabl
             border-radius: 5px;
             margin-top: 15px;
         }
+        .table_container{
+            height: 60px;
+            overflow: auto;
+        }
+        .field_container{
+            height: 100px;
+            overflow: auto;
+        }
         .div_tabela{
-            //float: left;
-            width: 49%;
+            float: left;
+            width: 50%;
             border: 1px solid white;
             border-radius: 5px;
         }
         .div_generator{
             text-align: center;
+        }
+        .fconfig_left_container{
+            float: left;
+            width: 50%;
+            height: 100%;
+            overflow: auto;
+        }
+        .fconfig_right_container{
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+        .clearboth{
+            clear: both;
         }
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -44,9 +69,9 @@ $result = $conn->query_select("SELECT name FROM sqlite_master WHERE type = 'tabl
 </head>
 <body>
     <form action="index.php" method="POST">
-        <div id="div_table" class="default_container">
+        <div id="div_table" class="default_container table_container">
         <div class="div_tabela">Tabela</div>
-        <div class="div_tabela">
+        <div class="">
             <select name="table" id="" onchange="load_menu(1, this.value);";>
                 <?php
                 $option = "";
@@ -58,11 +83,12 @@ $result = $conn->query_select("SELECT name FROM sqlite_master WHERE type = 'tabl
             </select>
         </div>
         </div>
-        <div id="div_fields_config" class="default_container">
-            <div id="fields_config_tree">
-                lala
+        <div id="div_fields_config" class="default_container field_container">
+            <div id="fconfig_left_container" class="fconfig_left_container">
+                <div id="fconfig_tree">
+                </div>
             </div>
-            <div id="fields_config_settings">
+            <div id="fconfig_right_container" class="fconfig_right_container">
                 lala
             </div>
         </div>
