@@ -34,19 +34,48 @@ public function getTotalComDesconto(FormaDePagamento $formaPGTO) {
  
   }
 
-  class Item{
+  class Itena{
   	private $nome = "";
   	private $valor = "";
+  	private $tipo = "";
 
-  	function __construct($nome, $valor){
+  	function __construct($nome, $valor, $tipo = 'lala'){
   		$this->nome = $nome;
   		$this->valor = $valor;
+  		$this->tipo = $tipo;
   	}
 
   	public function getValor(){
   		return $this->valor;
   	}
   }
+  class papai{
+  	private $nome = "";
+  	private $valor = "";
+  	private $tipo = "";
+
+  	function __construct($nome, $valor, $tipo = 'lala'){
+  		$this->nome = $nome;
+  		$this->valor = $valor;
+  		$this->tipo = $tipo;
+  	}
+
+  	public function getValor(){
+  		return $this->valor;
+  	}
+  }
+
+  class ItemFactory{
+  	public static function create($nome, $valor, $tipo = 'lala'){
+  		return new papai($nome, $valor, $tipo);
+  	}
+  }
+
+
+
+
+
+
  
 class PayPal {
   public function calcula($total) {
