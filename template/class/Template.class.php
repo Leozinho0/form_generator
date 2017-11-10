@@ -4,10 +4,11 @@
 
 class Template{
 
+	/*
 	private $html_return = "<table class='table table-hover table-striped table-bordered'>";
 	private $tableHeader = array();
 	private $tableBody = array();
-
+	*/
 	//IMPLEMENTAÇÃO
 	private $tpl_vars = array();
 	private $tpl = array();
@@ -18,13 +19,10 @@ class Template{
 		$this->tpl['path'] = $tpl_path;
 		$this->tpl['name'] = $tpl_name;
 		$this->tpl['tpl'] = $tpl_path.DIRECTORY_SEPARATOR.$tpl_name;
-		//$this->tpl_data['table_cols'] = $tpl_data['table_cols'];//Ajeitar isso - Foi só teste
-		//$this->tpl_data['table_rows'] = $tpl_data['table_rows'];//Ajeitar isso - Foi só teste
 		$this->tpl_vars = $tpl_vars;
-		//echo "<pre>";
-		//var_dump($this->tpl_vars);
 	}
 
+	/*
 	private function appendHeader($data){
 		if(!is_array($data)){
 			return false;
@@ -120,6 +118,7 @@ class Template{
 		return $this->html_return;
 	}
 	//Internal Functions - Test
+	*/
 	private function replaceQuote($str) {
 	    return str_replace("'", "&#39;", $str);
 	}
@@ -193,8 +192,11 @@ class Template{
 	public function getVars($var_name){
 		return $this->tpl_vars[$var_name];
 	}
+	public function setVars($var_name){
+		//
+	}
 	//
-	public function display2(){
+	public function display(){
 		if(file_exists($this->tpl['tpl'])){
 			include ($this->tpl['tpl']);
 		}else{
