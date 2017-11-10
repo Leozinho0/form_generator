@@ -8,7 +8,21 @@ class Template{
 	private $tableHeader = array();
 	private $tableBody = array();
 
-	function __construct(){
+	//IMPLEMENTAÇÃO
+	private $tpl_vars = array();
+	private $tpl = array();
+	//
+
+	function __construct($tpl_path, $tpl_name, $tpl_vars = ""){
+		//
+		$this->tpl['path'] = $tpl_path;
+		$this->tpl['name'] = $tpl_name;
+		$this->tpl['tpl'] = $tpl_path.DIRECTORY_SEPARATOR.$tpl_name;
+		//$this->tpl_data['table_cols'] = $tpl_data['table_cols'];//Ajeitar isso - Foi só teste
+		//$this->tpl_data['table_rows'] = $tpl_data['table_rows'];//Ajeitar isso - Foi só teste
+		$this->tpl_vars = $tpl_vars;
+		//echo "<pre>";
+		//var_dump($this->tpl_vars);
 	}
 
 	private function appendHeader($data){
@@ -174,6 +188,20 @@ class Template{
 			return $v;
 		}
 	}
+
+	//IMPLEMENTAÇÃO
+	public function getVars($var_name){
+		return $this->tpl_vars[$var_name];
+	}
+	//
+	public function display2(){
+		if(file_exists($this->tpl['tpl'])){
+			include ($this->tpl['tpl']);
+		}else{
+			echo "Error ao carregar template!";
+		}
+	}
+	//
 }
 
 
