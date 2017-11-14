@@ -1,3 +1,5 @@
 <?php
-require_once 'class/conn.class.php';
+
+include_once "devel". DIRECTORY_SEPARATOR ."control". DIRECTORY_SEPARATOR . "init.php";
+
 ?>

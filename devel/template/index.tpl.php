@@ -11,6 +11,7 @@
 			margin: 0;
 			height: 100%;
 			box-sizing: border-box;
+			overflow: auto;
 		}
 		.header{
 			background-color: red;
@@ -23,15 +24,17 @@
 			background-color: grey;
 			height: calc(100% - 50px - 30px);
 		}
-		.body_left{
+		.body_sidebar{
 			background-color: lightblue;
 			float: left;
 			width: 250px;
 			height: 100%;
+			overflow: auto;
 		}
-		.body_right{
+		.body_Content{
 			background-color: white;
 			height: 100%;
+			overflow: auto;
 		}
 		.footer{
 			background-color: green;
@@ -48,10 +51,10 @@
 	</div>
 	<!-- Body -->
 	<div id="body" class="body">
-		<div id="body_left" class="body_left">
+		<div id="body_sidebar" class="body_sidebar">
 			BODY LEFT CONTAINER
 		</div>
-		<div id="body_right" class="body_right">
+		<div id="body_Content" class="body_Content">
 			BODY RIGHT CONTAINER
 		</div>
 	</div>
