@@ -73,7 +73,7 @@
 		</div>
 			<input type="password">
 		<div>
-			<button onclick="window.location='../../iloader.php'">Login</button>
+			<button onclick="window.location='iloader.php'">Login</button>
 		</div>
 	</div>
 

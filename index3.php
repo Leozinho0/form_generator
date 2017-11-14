@@ -32,7 +32,7 @@ $tpl->setLabel($labes , array('Product ID', 'Description', 'Supplier', 'Category
 $html_table = $tpl->display();
 */
 $tpl_path = "template".DIRECTORY_SEPARATOR."tpl";
-$tpl_name = "grid_edit_view.tpl.php"; //Isso será refatorado pq tá chapado
+$tpl_name = "login.tpl.php"; //Isso será refatorado pq tá chapado
 $tpl_obj = new Template($tpl_path, $tpl_name, $tpl_vars);
 $tpl_obj->display();
 ?>
