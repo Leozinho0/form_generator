@@ -1,0 +1,34 @@
+body, html{
+	margin: 0;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: auto;
+}
+.header{
+	background-color: red;
+	height: 100px;
+	overflow: auto;
+}
+.header_toolbar{
+	background-color: yellow;
+}
+.body{
+	background-color: grey;
+	height: calc(100% - 100px - 30px);
+}
+.body_sidebar{
+	background-color: lightblue;
+	float: left;
+	width: 250px;
+	height: 100%;
+	overflow: auto;
+}
+.body_Content{
+	background-color: white;
+	height: 100%;
+	overflow: auto;
+}
+.footer{
+	background-color: green;
+	height: 30px;
+}

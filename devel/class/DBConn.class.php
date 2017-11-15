@@ -57,11 +57,11 @@ class DBConn{
 	}
 	//
 	##Public Methods
-	public function getSgbd(){
-		return $this->$this->conn['sgbd'];
+	public function getSGBD(){
+		return $this->conn['sgbd'];
 	}
 
-	public function getAdress(){
+	public function getAddress(){
 		return $this->conn['address'];
 	}
 
@@ -76,6 +76,22 @@ class DBConn{
 
 	public function getConnectionStatus(){
 		return $this->conn['status'];
+	}
+
+	##Query Functions
+	public function select($sql){
+		try{
+			/*		IMPLEMENTAR PROTEÇÃO GLOBAL DE INJECTION DAS QUERIES DE SELECT
+			$statement = $this->PDO_obj->prepare($sql_prepare);
+			$statement->execute(array(':productid' => $keys[0], ':productname' => $keys[1], ':supplierid' => $keys[2], ':categoryid' => $keys[3], ':quantityperunit' => $keys[4], ':unitprice' => $keys[5], ':totalvalue' => $keys[6], ':unitsinstock' => $keys[7], ':unitsonorder' => $keys[8], ':reorderlevel' => $keys[9], ':discontinued' => $keys[10], ':key' => $keys[0]));
+			var_dump($statement);*/
+			$ds = $this->PDO_obj->query($sql);
+			$ds = $ds->fetchAll(PDO::FETCH_NUM);
+			return $ds;
+
+		}catch(PDOException $e){
+			$this->conn_error = $e->getMessage();
+		}
 	}
 }
 

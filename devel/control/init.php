@@ -5,80 +5,46 @@ require_once __DIR__.'/../class/Template.class.php';
 
 session_start();
 
+//Objeto de conexção com o banco
 //Aqui entrará um script que irá ler as info do config.php para saber onde tá a base e qual a base instalada (SQLite ou MySQL etc)
 $fg_conn = new DBConn(__DIR__."/../etc/database.db", "", "", "", "sqlite");
 
+if(isset($_POST['usuario']) && isset($_POST['senha'])){
+
+	//CRÍTICO - PROTEGER CONTRA INJECTION
+	//CRÍTICO - PROTEGER CONTRA INJECTION
+	//CRÍTICO - PROTEGER CONTRA INJECTION
+	$sql = "SELECT COUNT(*) FROM tb_users WHERE LOGIN ='". $_POST['usuario'] ."' AND PASSWORD ='". $_POST['senha'] ."'";
+	$result = $fg_conn->select($sql);
+	
+	if($result[0][0] >= 1){
+		echo "y";
+	}else if($result[0][0] <= 0){
+		echo "n";
+	}else{
+		var_dump($result);
+	}
+	exit;
+}
+
+//Objeto de template da tela de login
+$tpl = array();
+$tpl['path'] = __DIR__.'/../template';
+$tpl['name'] = "login.tpl.php";
+$tpl['vars']['title'] = "FG - Login";
+$tpl['vars']['css'] = 'devel/lib/css/login.css';
+$tpl['vars']['js'] = 'devel/lib/js/login.js';
+
+$fg_interface_login = new Template($tpl['path'], $tpl['name'], $tpl['vars']);
+
 if($fg_conn->getConnectionStatus()){
+	//Para SQLite:
 	$_SESSION['fg'] = array();
-	//Jogar para sessão os arquivos comuns de conexão com o banco ex.: getAdress()
+	$_SESSION['fg']['conn']['address'] = $fg_conn->getAddress();
+	$_SESSION['fg']['conn']['user'] = $fg_conn->getUser();
+	$_SESSION['fg']['conn']['password'] = $fg_conn->getPassword();
+	$_SESSION['fg']['conn']['sgbd'] = $fg_conn->getSGBD();
+
+	$fg_interface_login->display();
 }
-/*
-echo "<pre>";
-var_dump($fg_conn);
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-$table = "products";
-
-if(isset($_POST['table'])){
-	$table = $_POST['table'];
-}
-//Init Conenction
-$conn = new Conn('sqlite', 'teste.db', '', '');
-
-$tpl_vars['form_table_cols'] = $conn->query_select("PRAGMA table_info($table)");
-$tpl_vars['form_table_rows'] = $conn->query_select("SELECT * FROM $table LIMIT 10");
-$tpl_vars['title'] = $table;
-$tpl_vars['form_title'] = $table;
-$tpl_vars['js'] = "js/scripts.js";
-$tpl_vars['css'] = "css/main.css";
-$tpl_vars['form_title'] = $table;
-$tpl_vars['form_title'] = $table;
-/*
-//Template Test
-$labes = array();
-foreach($columns as $v){
-	$labes[] = $v[1];
-}
-
-$tpl = new Template();
-$tpl->setHeader($columns);
-$tpl->setBody($data);
-$tpl->setLabel($labes , array('Product ID', 'Description', 'Supplier', 'Category', 'Quantity', 'Unit Price', 'Total Value', 'In Stock', 'On Order', 'Recorder Level', 'Discontinued'));
-$html_table = $tpl->display();
-
-$tpl_path = "template".DIRECTORY_SEPARATOR."tpl";
-$tpl_name = "login.tpl.php"; //Isso será refatorado pq tá chapado
-$tpl_obj = new Template($tpl_path, $tpl_name, $tpl_vars);
-$tpl_obj->display();
-*/
 ?>

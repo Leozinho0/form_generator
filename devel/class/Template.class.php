@@ -14,12 +14,12 @@ class Template{
 	private $tpl = array();
 	//
 
-	function __construct($tpl_path, $tpl_name, $tpl_vars = ""){
+	function __construct($tpl_path, $tpl_name, $tpl_vars = array()){
 		//
 		$this->tpl['path'] = $tpl_path;
 		$this->tpl['name'] = $tpl_name;
 		$this->tpl['tpl'] = $tpl_path.DIRECTORY_SEPARATOR.$tpl_name;
-		$this->tpl_vars = $tpl_vars;
+		$this->tpl['vars'] = $tpl_vars;
 	}
 
 	/*
@@ -190,7 +190,7 @@ class Template{
 
 	//IMPLEMENTAÇÃO
 	public function getVars($var_name){
-		return $this->tpl_vars[$var_name];
+		return $this->tpl['vars'][$var_name];
 	}
 	public function setVars($var_name){
 		//

@@ -4,43 +4,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php echo $this->getVars('title');?></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<style>
-		body, html{
-			margin: 0;
-			height: 100%;
-			box-sizing: border-box;
-			overflow: auto;
-		}
-		.header{
-			background-color: red;
-			height: 50px;
-		}
-		.header_toolbar{
-			background-color: yellow;
-		}
-		.body{
-			background-color: grey;
-			height: calc(100% - 50px - 30px);
-		}
-		.body_sidebar{
-			background-color: lightblue;
-			float: left;
-			width: 250px;
-			height: 100%;
-			overflow: auto;
-		}
-		.body_Content{
-			background-color: white;
-			height: 100%;
-			overflow: auto;
-		}
-		.footer{
-			background-color: green;
-			height: 30px;
-		}
-	</style>
+	<link rel="stylesheet" href="<?php echo $this->getVars('css'); ?>">
+	<!-- REMOVE -->
+	<script src="<?php echo $this->getVars('jquery');?>"></script>
+	<script src="<?php echo $this->getVars('bootstrap');?>"></script>
 </head>
 <body>
 	<!-- Header -->
@@ -62,5 +32,7 @@
 	<footer id="footer" class="footer">
 		FOOTER
 	</footer>
+	<!-- SCRIPTS -->
+	<script src="<?php echo $this->getVars('js'); ?>"></script>
 </body>
 </html>
