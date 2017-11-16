@@ -30,7 +30,11 @@
 				<button class="btn btn-success fg_btn_login" onclick="login_validate();">Login</button>
 			</div>
 		</div>
+		<div id="login_warn_error" class="container alert alert-danger login_warn_error">
+			<span>Usuário/Senha incorretos!</span>
+		</div>
 	</div>
+	
 
 	<!-- Footer -->
 	<footer id="container_footer" class="container_footer">

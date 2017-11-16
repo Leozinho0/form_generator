@@ -21,12 +21,14 @@
 	</div>
 	<!-- Body -->
 	<div id="body" class="body">
+		<!--
 		<div id="body_sidebar" class="body_sidebar">
 			BODY LEFT CONTAINER
 		</div>
 		<div id="body_Content" class="body_Content">
 			BODY RIGHT CONTAINER
 		</div>
+		-->
 	</div>
 	<!-- Header -->
 	<footer id="footer" class="footer">

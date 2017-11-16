@@ -20,11 +20,20 @@ $tpl['path'] = __DIR__.'/../template';
 $tpl['name'] = "index_header_toolbar.tpl.php";
 $fg_interface_index_header_toolbar = new Template($tpl['path'], $tpl['name']);
 
+
+$tpl = array();
+$tpl['path'] = __DIR__.'/../template';
+$tpl['name'] = "index_body_myProjects.tpl.php";
+$fg_interface_index_myProjects = new Template($tpl['path'], $tpl['name']);
+
 ?>
 <script>
 	$(document).ready(function(){
 		var header_toolbar_html = ' <?php $fg_interface_index_header_toolbar->display(); ?> ';
 		$('#header_toolbar').html(header_toolbar_html);
 		console.log(header_toolbar_html);
+
+		var body_myProjects_html = ' <?php $fg_interface_index_myProjects->display(); ?> ';
+		$('#body').html(body_myProjects_html);
 	});
 </script>

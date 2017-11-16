@@ -10,7 +10,7 @@ body, html{
 }
 .container_body{
 	height: calc(100% - 35px);
-	padding-top: 300px;
+	padding-top: 200px;
 }
 .body_login{
 	background-color: rgba(255, 255, 255, 0.4);
@@ -24,13 +24,17 @@ body, html{
 	padding: 8px 0 5px 0;
 }
 .container_footer{
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.4);
 	height: 35px;
 	width: 100%;
-	display: none;
 }
 .fg_btn_login{
 	padding: 15px;
 	margin-top: 15px;
 	width: 100%;
+}
+.login_warn_error{
+	margin-top: 15px;
+	width: 450px;
+	text-align: center;
 }
