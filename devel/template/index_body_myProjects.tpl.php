@@ -1,10 +1,10 @@
 <?php
 ?>
+<link rel="stylesheet" href="../lib/css/index.css">
 
 <div id="nav_body_myProjects" class="container nav_body_myProjects">
   <h2>Meus Projetos</h2><br>
   <!-- SEARCH -->
-
 <div class="container">
 	<div class="row">
             <div id="custom-search-input">
@@ -21,7 +21,6 @@
             </div>
 	</div>
 </div>
-
 <!--end search -->
   <!-- Left-aligned media object -->
   <hr>
@@ -35,7 +34,6 @@
     </div>
   </div>
   <hr>
-  
   <!-- Right-aligned media object -->
   <div class="media fg_myproject_right">
     <div class="media-body">
