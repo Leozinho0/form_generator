@@ -18,8 +18,11 @@ class Template{
 		//
 		$this->tpl['path'] = $tpl_path;
 		$this->tpl['name'] = $tpl_name;
-		$this->tpl['tpl'] = $tpl_path.DIRECTORY_SEPARATOR.$tpl_name;
+		$this->tpl['tpl'] = $tpl_path.$tpl_name;
 		$this->tpl['vars'] = $tpl_vars;
+		$this->tpl['vars']['jquery'] = $this->tpl['vars']['url_lib'] . "third/jquery/jquery.js";
+		$this->tpl['vars']['bootstrap'] = $this->tpl['vars']['url_lib'] . "third/bootstrap/dist/css/bootstrap.min.css";
+		$this->tpl['vars']['bootstrap_js'] = $this->tpl['vars']['url_lib'] . "third/bootstrap/dist/js/bootstrap.min.js";
 	}
 
 	/*

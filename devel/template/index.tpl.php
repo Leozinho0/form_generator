@@ -5,12 +5,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php echo $this->getVars('title');?></title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?php echo $this->getVars('css'); ?>">
-	<!-- REMOVE -->
-	<script src="<?php echo $this->getVars('jquery');?>"></script>
-	<script src="<?php echo $this->getVars('bootstrap');?>"></script>
+	<title><?php echo $this->getVars('title'); ?></title>
+	<!-- JQuery -->
+	<script src="<?php echo $this->getVars('jquery'); ?>"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="<?php echo $this->getVars('bootstrap'); ?>">
+	<script src="<?php echo $this->getVars('bootstrap_js'); ?>"></script>
+	<!-- CSS -->
+	<?php
+		$css = $this->getVars('css');
+		if(is_array($css)){
+			foreach($css as $k => $v){ 
+				?> <link rel="stylesheet" href="<?php echo $v; ?>"> <?php
+			}
+		}else{
+			?> <link rel="stylesheet" href="<?php echo $css; ?>"> <?php
+		}
+	?>
+	<!-- JS -->
+	<script src="<?php echo $this->getVars('js'); ?>"></script>
 </head>
 <body>
 	<!-- Header -->

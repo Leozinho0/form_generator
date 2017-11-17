@@ -1,5 +1,6 @@
 <?php
 //Base
+//require_once __DIR__.'/../class/config.php';
 require_once __DIR__.'/../class/DBConn.class.php';
 require_once __DIR__.'/../class/Template.class.php';
 
@@ -29,11 +30,12 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 
 //Objeto de template da tela de login
 $tpl = array();
-$tpl['path'] = __DIR__.'/../template';
+$tpl['path'] = 'devel/template/';
 $tpl['name'] = "login.tpl.php";
 $tpl['vars']['title'] = "FG - Login";
-$tpl['vars']['css'] = 'devel/lib/css/login.css';
-$tpl['vars']['js'] = 'devel/lib/js/login.js';
+$tpl['vars']['css'] = "devel/lib/css/login.css";
+$tpl['vars']['js'] = "devel/lib/js/login.js";
+$tpl['vars']['url_lib'] = 'devel/lib/';
 
 $fg_interface_login = new Template($tpl['path'], $tpl['name'], $tpl['vars']);
 
