@@ -7,14 +7,15 @@ body, html{
 .header{
 	background-color: red;
 	height: 100px;
-	overflow: hidden;
 }
 .header_toolbar{
 	background-color: yellow;
 }
 .body{
-	background-color: grey;
+	background-color: #D1D5D8;
 	height: calc(100% - 100px - 30px);
+	overflow: auto;
+	width: 100%;
 }
 .body_sidebar{
 	background-color: lightblue;
@@ -29,10 +30,29 @@ body, html{
 	overflow: auto;
 }
 .footer{
-	background-color: green;
+	background-color: rgba(0, 0, 0, 0.6);
 	height: 30px;
 }
 .nav_header_toolbar{
 	margin-bottom: 0px !important;
 	border-radius: 0px !important;
+}
+.nav_header_toolbar_2{
+	overflow: hidden;
+}
+.nav_body_myProjects{
+	color: gray;
+}
+.nav_body_myProjects_search{
+	width: 300px;
+	float: left !important;
+}
+.nav_body_myProjects_search *{
+	height: 40px;
+}
+.fg_myproject_left{
+	text-align: left;
+}
+.fg_myproject_right{
+	text-align: right;
 }
